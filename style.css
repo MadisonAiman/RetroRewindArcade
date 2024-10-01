@@ -1,0 +1,132 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+/* Body */
+body {
+    background-color: #081f4d; /* Midnight blue background */
+    color: white; /* White text */
+}
+
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 20px;
+    background-color: #141e3c; /* Darker blue to make header stand out */
+    color: #00d2ff; /* Neon blue text */
+}
+
+header h1 {
+    font-size: 3rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ff4efd; /*Burnt Orange */
+}
+
+header p {
+    font-size: 1.5rem;
+    color: #00d2ff; /* Neon blue */
+    margin-top: 10px;
+}
+
+/* Navigation Styles */
+nav {
+    text-align: center;
+    padding: 10px;
+    background-color: #141e3c; /* Same color as header background */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: #00d2ff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid #00d2ff;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ff4efd;
+    color: #141e3c; /* Switch to darker background on hover */
+}
+
+
+/* Main Content */
+main {
+    padding: 50px;
+}
+
+/* Two-Column Flexbox Layout */
+.two-column {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px; /* Gap between columns */
+    padding: 20px;
+    margin-bottom: 40px;
+}
+
+/* Ensure images don't stretch */
+.two-column img {
+    max-width: 45%; /* Adjust the image width to less than half */
+    height: auto;
+    border-radius: 8px;
+}
+
+.two-column .text-content {
+    flex: 1; /* Allows the text content to fill up the remaining space */
+    padding: 0 20px;
+}
+
+/* Responsive Design: Stack columns vertically on small screens */
+@media (max-width: 768px) {
+    .two-column {
+        flex-direction: column;
+        text-align: center; /* Center content on smaller screens */
+    }
+
+    .two-column img {
+    max-width: 100%; /* Ensures the image does not exceed the width of its container */
+    max-height: 300px; /* Set a maximum height to prevent the image from growing too tall */
+    object-fit: cover; /* Ensures the image fills the container without stretching */
+    border-radius: 8px; /* Optional: Adds a rounded corner to images */
+    margin: 0 auto; /* Center the image within its container */
+    display: block; /* Ensures proper centering of the image */
+}
+
+
+    .two-column .text-content {
+        padding: 0; /* Remove padding for a cleaner mobile look */
+    }
+}
+/* Footer Styles */
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #141e3c;
+    color: #00d2ff;
+}
+
+footer p {
+    font-size: 1rem;
+}
