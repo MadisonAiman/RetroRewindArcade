@@ -8,50 +8,56 @@
 html {
     scroll-behavior: smooth;
     font-family: 'Courier New', Courier, monospace;
-
 }
 
 /* Body */
 body {
-    background-color: #081f4d; /* Midnight blue background */
-    color: white; /* White text */
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #0e1624; /* Dark background */
+    color: #fff; /* White text */
 }
 
 /* Header Styles */
 header {
     text-align: center;
     padding: 20px;
-    background-color: #141e3c; /* Darker blue to make header stand out */
+    background-color: #141e3c; /* Darker blue */
     color: #00d2ff; /* Neon blue text */
+    margin-bottom: 20px; /* Add some space after header */
 }
 
 header h1 {
     font-size: 3rem;
     text-transform: uppercase;
     font-weight: bold;
-    color: #ff4efd; /*Burnt Orange */
+    color: #ff4efd; /* Neon pink */
+    margin: 10px 0;
 }
 
 header p {
     font-size: 1.5rem;
     color: #00d2ff; /* Neon blue */
-    margin-top: 10px;
+    margin: 10px 0;
 }
 
 /* Navigation Styles */
 nav {
-    text-align: center;
-    padding: 10px;
-    background-color: #141e3c; /* Same color as header background */
+    text-align: center; /* Ensures the nav is centered */
+    margin-bottom: 20px; /* Adds space below the navigation */
 }
 
 nav ul {
+    display: inline-flex; /* Keeps the nav items in a row */
+    justify-content: center; /* Centers the nav items */
+    padding: 0;
+    margin: 0;
     list-style: none;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 20px;
+    margin: 0 15px; /* Adjust spacing between the links */
 }
 
 nav ul li a {
@@ -66,67 +72,141 @@ nav ul li a {
 
 nav ul li a:hover {
     background-color: #ff4efd;
-    color: #141e3c; /* Switch to darker background on hover */
+    color: #141e3c; /* Darker background on hover */
 }
 
 
 /* Main Content */
-main {
-    padding: 50px;
+/* Block Paragraphs for Body Content */
+main section {
+    padding: 20px;
+    margin: 0 auto;
+    max-width: 800px; /* Keep the paragraphs contained to a readable width */
+    text-align: left; /* Left-align the paragraphs */
 }
 
-/* Two-Column Flexbox Layout */
+main h2 {
+    font-size: 2rem;
+    color: #ff4efd; /* Neon pink for headings */
+    margin-top: 20px;
+}
+
+main p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #00d2ff; /* Neon blue for paragraphs */
+    margin-bottom: 20px;
+}
+
+p {
+    margin-bottom: 1.8em; /* Adjust paragraph spacing */
+    line-height: 1.7;
+}
+
+/* Two-Column Layout */
 .two-column {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px; /* Gap between columns */
+    gap: 20px;
     padding: 20px;
     margin-bottom: 40px;
 }
 
-/* Ensure images don't stretch */
 .two-column img {
-    max-width: 45%; /* Adjust the image width to less than half */
+    max-width: 45%;
     height: auto;
     border-radius: 8px;
+    transition: transform 1.2s ease; /* Slow zoom */
+}
+
+.two-column img:hover {
+    transform: scale(1.1);
 }
 
 .two-column .text-content {
-    flex: 1; /* Allows the text content to fill up the remaining space */
+    flex: 1;
     padding: 0 20px;
+    align-items: left;
 }
 
-/* Responsive Design: Stack columns vertically on small screens */
+/* Responsive Design */
 @media (max-width: 768px) {
     .two-column {
         flex-direction: column;
-        text-align: center; /* Center content on smaller screens */
+        text-align: center;
     }
 
     .two-column img {
-    max-width: 100%; /* Ensures the image does not exceed the width of its container */
-    max-height: 300px; /* Set a maximum height to prevent the image from growing too tall */
-    object-fit: cover; /* Ensures the image fills the container without stretching */
-    border-radius: 8px; /* Optional: Adds a rounded corner to images */
-    margin: 0 auto; /* Center the image within its container */
-    display: block; /* Ensures proper centering of the image */
-}
-
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        margin: 0 auto;
+        display: block;
+    }
 
     .two-column .text-content {
-        padding: 0; /* Remove padding for a cleaner mobile look */
+        padding: 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
     }
 }
+
 /* Footer Styles */
 
 footer {
     text-align: center;
     padding: 20px;
-    background-color: #141e3c;
-    color: #00d2ff;
+    background-color: #141e3c; /* Darker blue */
 }
 
-footer p {
-    font-size: 1rem;
+footer button {
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: none;
+    background-color: #00d2ff; /* Neon blue */
+    color: #141e3c;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
+
+footer button:hover {
+    background-color: #ff4efd; /* Neon pink on hover */
+}
+
+/* Centering the Built by ViSpiserKage text */
+footer p {
+    margin-top: 10px;
+}
+
+footer p a {
+    color: #00d2ff; /* Neon blue */
+    text-decoration: none;
+}
+
+footer p a:hover {
+    color: #ff4efd; /* Neon pink on hover */
+}
+
+/* Pulsing effect for Contact Us button */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+footer button.pulse {
+    animation: pulse 1.5s infinite;
+}
+
+
