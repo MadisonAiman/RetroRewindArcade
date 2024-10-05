@@ -11,3 +11,13 @@ document.querySelectorAll('nav ul li a').forEach(anchor => {
         });
     });
 });
+
+const contactButton = document.querySelector('footer button');
+
+contactButton.addEventListener('mouseover', function () {
+    contactButton.classList.add('pulse');
+});
+
+contactButton.addEventListener('mouseout', function () {
+    contactButton.classList.remove('pulse');
+});
